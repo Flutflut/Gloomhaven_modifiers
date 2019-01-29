@@ -16,34 +16,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(TAG, "OnCreate: Started");
+        Log.d(TAG, "onCreate: Started.");
 
         mSectionsStatePagerAdapter = new SectionsStatePagerAdapter(getSupportFragmentManager());
 
-        mViewPager = (ViewPager) findViewById( R.id.container);
+        mViewPager = (ViewPager) findViewById(R.id.containter);
+        //setup the pager
         setupViewPager(mViewPager);
 
     }
 
-
-    private void setupViewPager(ViewPager viewPager) {
+    private void setupViewPager(ViewPager viewPager){
         SectionsStatePagerAdapter adapter = new SectionsStatePagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new MainFragment(), "Deck");
-        adapter.addFragment(new HistoryFragment(), "History");
-        adapter.addFragment(new ModifyFragment(), "Modify");
+        adapter.addFragment(new MainFragment(), "Fragment1");
+        adapter.addFragment(new HistoryFragment(), "Fragment2");
+        adapter.addFragment(new ModifyFragment(), "Fragment3");
         viewPager.setAdapter(adapter);
     }
 
     public void setViewPager(int fragmentNumber){
         mViewPager.setCurrentItem(fragmentNumber);
     }
-
-
-
-
-
-
-
-
-
 }
+
+
+
