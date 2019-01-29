@@ -2,28 +2,66 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Deck">
+    tools:context=".MainFragment">
 
-    <Button
-        android:id="@+id/buttonModify"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
+
+    <ImageView
+        android:id="@+id/buttonDraw"
+        android:layout_width="0dp"
+        android:layout_height="260dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Modify Deck"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonShuffle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/backcard" />
+
+    <TextView
+        android:id="@+id/yourCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="Your Card"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDraw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonHistory"
-        android:layout_width="150dp"
+        android:layout_width="100dp"
         android:layout_height="70dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
         android:text="Card History"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonShuffle"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Card History"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonModify"
+        app:layout_constraintStart_toEndOf="@+id/buttonHistory" />
+
+    <Button
+        android:id="@+id/buttonModify"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:text="Modify Deck"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

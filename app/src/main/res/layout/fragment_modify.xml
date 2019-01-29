@@ -2,9 +2,12 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ModifyDeck">
+    tools:context=".ModifyFragment">
+
+
 
     <Button
         android:id="@+id/buttonCancel"
@@ -165,12 +168,14 @@
         android:id="@+id/c10amount"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="number"
         android:text="0"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="275dp"
-        tools:layout_editor_absoluteY="461dp" />
+        app:layout_constraintEnd_toEndOf="@+id/c9amount"
+        app:layout_constraintStart_toStartOf="@+id/c9amount"
+        app:layout_constraintTop_toBottomOf="@+id/c9amount" />
 
     <TextView
         android:id="@+id/c2face"
@@ -447,5 +452,7 @@
         app:layout_constraintEnd_toStartOf="@+id/c12amount"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/c12amount" />
+
+
 
 </android.support.constraint.ConstraintLayout>
