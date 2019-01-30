@@ -8,26 +8,17 @@
     tools:context=".ModifyFragment">
 
 
-
-    <Button
-        android:id="@+id/buttonCancel"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Cancel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/buttonApply"
-        android:layout_width="150dp"
+        android:layout_width="250dp"
         android:layout_height="70dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Apply and Shuffle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/c1face"

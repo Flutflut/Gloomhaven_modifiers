@@ -12,22 +12,13 @@ import android.widget.Button;
 public class ModifyFragment extends Fragment {
     private static final String TAG = "MainFragment";
 
-    private Button buttonCancel;
     private Button buttonApply;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main, container,false);
-        buttonCancel = (Button) view.findViewById(R.id.buttonCancel);
+        View view = inflater.inflate(R.layout.fragment_modify, container,false);
         buttonApply = (Button) view.findViewById(R.id.buttonApply);
-
-        buttonCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((MainActivity)getActivity()).setViewPager(0);
-            }
-        });
 
         buttonApply.setOnClickListener(new View.OnClickListener() {
             @Override

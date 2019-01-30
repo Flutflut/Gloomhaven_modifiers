@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         mSectionsStatePagerAdapter = new SectionsStatePagerAdapter(getSupportFragmentManager());
 
-        mViewPager = (ViewPager) findViewById(R.id.containter);
+        mViewPager = (ViewPager) findViewById(R.id.container);
         //setup the pager
         setupViewPager(mViewPager);
 
