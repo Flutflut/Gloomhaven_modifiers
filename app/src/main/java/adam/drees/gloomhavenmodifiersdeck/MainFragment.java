@@ -42,6 +42,7 @@ public class MainFragment extends Fragment {
                 Card drawnCard;
                 drawnCard = ((MainActivity)getActivity()).playerDeck.draw();
                 cardText.setText(drawnCard.contents);
+                ((MainActivity)getActivity()).sendEvent(drawnCard.contents);
                 cardBack.setBackgroundColor(drawnCard.background);
                 cardEdition.setText(Integer.toString(drawnCard.edition));
                 cardText.setPadding(drawnCard.xMove,drawnCard.yMove,16-drawnCard.xMove, 16-drawnCard.yMove);
@@ -53,6 +54,7 @@ public class MainFragment extends Fragment {
         buttonShuffle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ((MainActivity)getActivity()).sendEvent("DECK SHUFFLED");
                 ((MainActivity)getActivity()).playerDeck.shuffle();
                 cardText.setText("");
                 cardBack.setBackgroundColor(Color.parseColor("#FFFFFF"));

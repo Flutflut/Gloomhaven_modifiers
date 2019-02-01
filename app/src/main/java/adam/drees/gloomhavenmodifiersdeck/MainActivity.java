@@ -10,8 +10,16 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
+    //Fragment Stuff
+    MainFragment frag1 = new  MainFragment();
+    HistoryFragment frag2 = new  HistoryFragment();
+    ModifyFragment frag3 = new  ModifyFragment();
     private SectionsStatePagerAdapter mSectionsStatePagerAdapter;
     private ViewPager mViewPager;
+
+
+
+
 
 
     @Override
@@ -32,15 +40,28 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager){
         SectionsStatePagerAdapter adapter = new SectionsStatePagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new MainFragment(), "Fragment1");
-        adapter.addFragment(new HistoryFragment(), "Fragment2");
-        adapter.addFragment(new ModifyFragment(), "Fragment3");
+        adapter.addFragment(frag1, "Fragment1");
+        adapter.addFragment(frag2, "Fragment2");
+        adapter.addFragment(frag3, "Fragment3");
         viewPager.setAdapter(adapter);
     }
 
     public void setViewPager(int fragmentNumber){
         mViewPager.setCurrentItem(fragmentNumber);
     }
+
+
+    public void sendEvent(String message){
+        frag2.insertSingleItem(message);
+    }
+
+
+
+
+
+
+
+
 }
 
 
