@@ -55,7 +55,7 @@ public class HistoryFragment extends Fragment {
 
     private void removeHalf() {
         int startIndex = eventMessages.size()/2; // inclusive
-        int endIndex = eventMessages.size()-1;   // exclusive
+        int endIndex = eventMessages.size();   // exclusive
         int count = endIndex - startIndex; // 2 items will be removed
         eventMessages.subList(startIndex, endIndex).clear();
         rclAdapter.notifyItemRangeRemoved(startIndex, count);

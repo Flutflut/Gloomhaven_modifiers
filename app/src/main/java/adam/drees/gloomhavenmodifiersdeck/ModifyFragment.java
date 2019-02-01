@@ -65,6 +65,7 @@ public class ModifyFragment extends Fragment {
                     ((MainActivity)getActivity()).playerDeck.defaultContents(face[i].getText().toString(),i+7);
                 }
 
+                ((MainActivity)getActivity()).sendEvent("DECK MODIFIED");
 
                 ((MainActivity)getActivity()).playerDeck.rebuildDeck();
                 //((MainActivity)getActivity()).setViewPager(0);
