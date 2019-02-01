@@ -19,6 +19,7 @@ public class MainFragment extends Fragment {
     private Button buttonShuffle;
     private TextView cardText;
     private ConstraintLayout cardBack;
+    private TextView cardEdition;
 
 
 
@@ -31,6 +32,7 @@ public class MainFragment extends Fragment {
         buttonShuffle = (Button) view.findViewById(R.id.buttonShuffle);
         cardText = (TextView) view.findViewById(R.id.displayCard);
         cardBack = (ConstraintLayout) view.findViewById(R.id.displayBackground);
+        cardEdition = (TextView) view.findViewById(R.id.displayEdition);
 
 
 
@@ -41,6 +43,8 @@ public class MainFragment extends Fragment {
                 drawnCard = ((MainActivity)getActivity()).playerDeck.draw();
                 cardText.setText(drawnCard.contents);
                 cardBack.setBackgroundColor(drawnCard.background);
+                cardEdition.setText(Integer.toString(drawnCard.edition));
+                cardText.setPadding(drawnCard.xMove,drawnCard.yMove,16-drawnCard.xMove, 16-drawnCard.yMove);
             }
         });
 
@@ -52,6 +56,7 @@ public class MainFragment extends Fragment {
                 ((MainActivity)getActivity()).playerDeck.shuffle();
                 cardText.setText("");
                 cardBack.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                cardEdition.setText("");
             }
         });
 

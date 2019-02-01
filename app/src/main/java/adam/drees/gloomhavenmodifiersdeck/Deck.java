@@ -14,6 +14,8 @@ public class Deck {
     private int[] quantityList;
     private int[] backgroundList;
 
+    Random rand = new Random();
+
     //Create initial deck
     public Deck(){
     contentsList = new String[CARDTYPES];
@@ -32,10 +34,9 @@ public class Deck {
 
     //Shuffle the array of cards;
     public void shuffle(){
-        Random random = new Random();
-        random.nextInt();
+        rand.nextInt();
         for(int i = 0; i < cards.size(); i++){
-            int j = random.nextInt(cards.size());
+            int j = rand.nextInt(cards.size());
             Card holder = cards.get(i);
             cards.set(i,cards.get(j));
             cards.set(j, holder);
@@ -46,16 +47,29 @@ public class Deck {
     //take the defined deck arrays and use them to build a deck
     public void rebuildDeck(){
         cards.clear();
+        int count = 1;
         for(int i = 0; i<CARDTYPES; i++){
             for(int j = 0; j<quantityList[i]; j++){
                 Card writer = new Card();
                 writer.contents = contentsList[i];
-                writer.background = backgroundList[i];
+                writer.background = RandomColor(backgroundList[i]);
+                writer.edition = count++;
+                writer.xMove = rand.nextInt(16);
+                writer.yMove = rand.nextInt(16);
                 cards.add(writer);
             }
         }
        shuffle();
     }
+
+    private int RandomColor(int baseTone){
+        int redMod = rand.nextInt(20);
+        int greenMod = rand.nextInt(20);
+        int blueMod = rand.nextInt(20);
+        int colorMod = Color.rgb(redMod-10, greenMod-10, blueMod-10);
+        return baseTone+colorMod;
+    }
+
 
 
     //Populates arrays with known defaults. this should be moved to a values file...
