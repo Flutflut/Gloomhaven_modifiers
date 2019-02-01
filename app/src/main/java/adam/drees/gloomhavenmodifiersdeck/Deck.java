@@ -123,7 +123,13 @@ public class Deck {
         backgroundList[14] = Color.parseColor( "#8B62C4" );
     }
 
+    void defaultQuantity(int value, int cardNo){
+        quantityList[cardNo] = value;
+    }
 
+    void defaultContents(String value, int cardNo){
+        contentsList[cardNo] = value;
+    }
 
 
 }
