@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,7 @@ public class HistoryFragment extends Fragment {
     //Recycle View for History
     RecyclerViewAdapter rclAdapter;
     public ArrayList<String> eventMessages = new ArrayList<>();
-
+    private ImageView buttonR;
 
     @Nullable
     @Override
@@ -35,7 +36,15 @@ public class HistoryFragment extends Fragment {
         rclAdapter = new RecyclerViewAdapter(getContext(), eventMessages);
         recyclerView.setAdapter(rclAdapter);
 
+        buttonR = (ImageView) view.findViewById(R.id.historyr);
 
+
+        buttonR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) getActivity()).setViewPager(1);
+            }
+        });
 
         return view;
     }
@@ -60,7 +69,6 @@ public class HistoryFragment extends Fragment {
         eventMessages.subList(startIndex, endIndex).clear();
         rclAdapter.notifyItemRangeRemoved(startIndex, count);
     }
-
 
 
 

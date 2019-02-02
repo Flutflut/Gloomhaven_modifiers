@@ -9,17 +9,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 public class ModifyFragment extends Fragment {
     private static final String TAG = "MainFragment";
 
     private Button buttonApply;
+    private ImageView buttonL;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_modify, container,false);
         buttonApply = (Button) view.findViewById(R.id.buttonApply);
+        buttonL = (ImageView) view.findViewById(R.id.modifyl);
 
         final EditText count[] = new EditText[15];
         final EditText face[] = new EditText[8];
@@ -71,6 +74,15 @@ public class ModifyFragment extends Fragment {
                 //((MainActivity)getActivity()).setViewPager(0);
             }
         });
+
+        buttonL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) getActivity()).setViewPager(1);
+            }
+        });
+
+
 
         return view;
     }

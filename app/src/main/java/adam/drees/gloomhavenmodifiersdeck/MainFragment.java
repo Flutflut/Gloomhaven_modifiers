@@ -20,6 +20,8 @@ public class MainFragment extends Fragment {
     private TextView cardText;
     private ConstraintLayout cardBack;
     private TextView cardEdition;
+    private ImageView buttonL;
+    private ImageView buttonR;
 
 
 
@@ -34,6 +36,8 @@ public class MainFragment extends Fragment {
         cardBack = (ConstraintLayout) view.findViewById(R.id.displayBackground);
         cardEdition = (TextView) view.findViewById(R.id.displayEdition);
 
+        buttonL = (ImageView) view.findViewById(R.id.mainl);
+        buttonR = (ImageView) view.findViewById(R.id.mainr);
 
 
         buttonDraw.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +64,23 @@ public class MainFragment extends Fragment {
                 cardEdition.setText("");
             }
         });
+
+        buttonL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) getActivity()).setViewPager(0);
+            }
+        });
+
+        buttonR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) getActivity()).setViewPager(2);
+            }
+        });
+
+
+
 
         return view;
     }
