@@ -50,7 +50,6 @@ public class MainFragment extends Fragment {
         });
 
 
-
         buttonShuffle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,8 +60,6 @@ public class MainFragment extends Fragment {
                 cardEdition.setText("");
             }
         });
-
-
 
         return view;
     }

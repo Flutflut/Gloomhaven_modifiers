@@ -33,17 +33,15 @@ public class MainActivity extends AppCompatActivity {
         //setup the pager
         setupViewPager(mViewPager);
 
-
-
-
     }
 
     private void setupViewPager(ViewPager viewPager){
         SectionsStatePagerAdapter adapter = new SectionsStatePagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(frag1, "Fragment1");
         adapter.addFragment(frag2, "Fragment2");
+        adapter.addFragment(frag1, "Fragment1");
         adapter.addFragment(frag3, "Fragment3");
         viewPager.setAdapter(adapter);
+        setViewPager(1);
     }
 
     public void setViewPager(int fragmentNumber){
